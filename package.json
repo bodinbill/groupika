@@ -1,24 +1,49 @@
 {
-  "name": "groupika",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
+	"name": "groupika-web",
+	"version": "1.0.0",
+	"description": "Groupika web client.",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack-dev-server --inline --content-base .",
+		"build": "webpack && cp ./index.html dist/index.html && cp -r ./static dist/static",
+		"deploy": "npm run build && cd ./dist && firebase deploy --project=tripwithfriends-71e07"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bodinbill/groupika.git"
+	},
+	"keywords": [
+		"groupika",
+		"web"
+	],
+	"author": "Bodin Srisompong",
+	"license": "ISC",
+	"homepage": "https://github.com/bodinbill/groupika",
+	"dependencies": {
+		"html-react-parser": "^0.3.3",
+		"material-ui": "^0.16.4",
+		"react": "^15.0.2",
+		"react-dom": "^15.0.2",
+		"react-motion": "^0.4.5",
+		"react-redux": "^4.4.5",
+		"react-router": "^2.8.1",
+		"react-swipeable-views": "^0.7.9",
+		"react-tap-event-plugin": "^1.0.0",
+		"redux": "^3.6.0",
+		"redux-actions": "^0.13.0",
+		"redux-form": "^6.0.5",
+		"redux-logger": "2.7.4"
+	},
+	"devDependencies": {
 		"babel-cli": "^6.16.0",
-		"babel-eslint": "^7.0.0",
-		"babel-loader": "^6.2.5",
-		"babel-plugin-transform-class-properties": "^6.16.0",
+		"babel-jest": "^17.0.2",
+		"babel-polyfill": "^6.20.0",
 		"babel-preset-es2015": "^6.16.0",
-		"babel-preset-react": "^6.16.0",
-    "react-scripts": "0.7.0"
-  },
-  "dependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+		"babel-preset-stage-0": "^6.16.0",
+		"babel-watch": "^2.0.2",
+		"react-scripts": "0.8.5",
+		"npm-run-all": "^3.1.2",
+		"webpack": "^1.12.13",
+		"webpack-dev-server": "^1.14.1"
+	}
 }
